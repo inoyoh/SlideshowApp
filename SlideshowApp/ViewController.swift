@@ -98,10 +98,22 @@ class ViewController: UIViewController {
 
         // 遷移先のExpandViewControllerで宣言しているExpandNumに値を代入して渡す
         expandViewController.ExpandNum = slideNum
+        
+        
+        // 表示を変える（停止→再生）
+        actionButton.setTitle("再生", for: .normal)
+        
+        // タイマーを停止して破棄する
+        self.timer.invalidate()
+
+        playJudge = 0
+
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
+        
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
-
 }
 
